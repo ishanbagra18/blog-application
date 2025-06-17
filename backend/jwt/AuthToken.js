@@ -10,9 +10,9 @@ const createTokenAndSaveCookies = async (userId , res) =>
     })
 
     res.cookie("jwt",token,{
-        httpOnly:true,  //xss
+        httpOnly:false,  //xss
         secure:false,    
-        sameSite:"lax",  //csrf
+        sameSite:"none",  //csrf
         path: "/",
     });
    
